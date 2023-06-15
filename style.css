@@ -49,20 +49,33 @@ body{
     border-radius:10px;
     padding:1.5rem;
     transition: all .5s ease-in-out;
+    visibility: hidden;
+    opacity: 0;
 }
 /* Right Side */
 #timeline ul li:nth-child(odd) div{
     left:40px;
+    transform: translateX(200px);
 }
 /* Left Side */
 #timeline ul li:nth-child(even) div{
     right:434px;
+    transform: translateX(-200px);
+}
+/* Show Boxes */
+#timeline ul li.show div{
+    transform:none;
+    visibility: visible;
+    opacity: 1;
+}
+#timeline ul li.show:after{
+    background:var(--secondary-color);
 }
 /* dots */
 #timeline ul li:after{
     content: '';
     position: absolute;
-    background:var(--secondary-color);
+    background:inherit;
     width:25px;
     height:25px;
     left:50%;
